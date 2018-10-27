@@ -1,0 +1,37 @@
+Use Senda
+
+-----------------TRIGGERS---------------
+----------------------------------------
+
+create trigger tr_insert
+on Autobus
+instead of insert
+as
+BEGIN
+	select *
+	from inserted 
+END
+
+-----------------------------------------
+
+create trigger tr_delete
+on ChoferAutobus
+instead of delete
+as
+begin
+	select *
+	from deleted
+END
+
+-----------------------------------------
+
+create trigger tr_update
+on Conductor
+instead of insert
+as
+begin
+	select *
+	from inserted Autobuses
+	select * 
+	from deleted
+END
